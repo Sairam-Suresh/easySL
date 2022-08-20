@@ -12,11 +12,11 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import TabThreeScreen from "../screens/TabThreeScreen";
+import ModalScreen from '../screens/Template/ModalScreen';
+import NotFoundScreen from '../screens/Template/NotFoundScreen';
+import TabOneScreen from '../screens/Template/TabOneScreen';
+import TabTwoScreen from '../screens/Template/TabTwoScreen';
+import TabThreeScreen from "../screens/Template/TabThreeScreen";
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
