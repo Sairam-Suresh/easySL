@@ -1,7 +1,17 @@
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-
+import LeadershipACECard from '../../components/Leadership/ACE/ServLearningCardCmpt';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
+
+/*
+The app should be able to:
+- Public can contribute ideas for service learning
+- Students can get their projects rated online
+- ACE Leaders can have more abmin privileges over the posts
+- ACE Leaders can also approve or reject submissions of service learning
+
+*/
+
 
 export default function Leadership({ navigation }: RootTabScreenProps<'LeadershipACE'>) {
   const myfunc = () => {
@@ -9,9 +19,15 @@ export default function Leadership({ navigation }: RootTabScreenProps<'Leadershi
   };
 
   return (
+    <ScrollView>
       <View>
-        <Text style={styles.appContainer}>Hello</Text>
+        <View style={styles.appContainer}>
+          <LeadershipACECard title="Hello world" description="This is our service learning Project"/>
+          <LeadershipACECard title="Hello world" description="This is our service learning Project"/>
+          <LeadershipACECard title="Hello world" description="This is our service learning Project"/>
+        </View>
       </View>
+    </ScrollView>
   );
 }
 
