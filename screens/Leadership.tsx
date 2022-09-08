@@ -1,9 +1,13 @@
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function Leadership({ navigation }: RootTabScreenProps<'Leadership'>) {
+  const myfunc = () => {
+    console.log('hello hey sexy')
+  };
+
   return (
       <View>
         
