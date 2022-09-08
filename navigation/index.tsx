@@ -17,7 +17,7 @@ import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import Leadership from '../screens/Leadership';
+import Leadership from '../screens/Leadership/LeadershipACE';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -58,14 +58,14 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Leadership"
+      initialRouteName="LeadershipACE"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="Leadership"
+        name="LeadershipACE"
         component={Leadership}
-        options={({ navigation }: RootTabScreenProps<'Leadership'>) => ({
+        options={({ navigation }: RootTabScreenProps<'LeadershipACE'>) => ({
           title: 'Leadership',
           tabBarIcon: ({ color }) => <TabBarIconMaterialIcon name="person-search" color={color} />,
           headerRight: () => (

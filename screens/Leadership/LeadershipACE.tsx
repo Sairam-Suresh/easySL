@@ -1,16 +1,16 @@
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import { Text, View } from '../../components/Themed';
+import { RootTabScreenProps } from '../../types';
 
-export default function Leadership({ navigation }: RootTabScreenProps<'Leadership'>) {
+export default function Leadership({ navigation }: RootTabScreenProps<'LeadershipACE'>) {
   const myfunc = () => {
     console.log('hello hey sexy')
   };
 
   return (
       <View>
-        
+        <Text style={styles.appContainer}>Hello</Text>
       </View>
   );
 }
@@ -33,4 +33,7 @@ const styles = StyleSheet.create({
   },
 
   // Custom Styles
+  appContainer: {
+    margin: "2%",
+  }
 });

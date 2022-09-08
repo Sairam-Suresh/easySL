@@ -15,9 +15,9 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          Leadership: {
+          LeadershipACE: {
             screens: {
-              Leadership: 'Leadership',
+              LeadershipACE: 'LeadershipACE',
             },
           },
         },
