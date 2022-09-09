@@ -1,7 +1,8 @@
-import { ScrollView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import LeadershipACECard from '../../components/Leadership/ACE/ServLearningCardCmpt';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
+import { nanoid } from 'nanoid';
 
 /*
 The app should be able to:
@@ -18,16 +19,23 @@ export default function Leadership({ navigation }: RootTabScreenProps<'Leadershi
     console.log('hello hey sexy')
   };
 
+  const DATA = [
+    {title: "This is my service learning", description: "This is my service learning Project guyssssss :D", ID: 1},
+    {title: "This is my service learning 2", description: "This is my service learning Project guyssssss :D 222", ID: 2},
+    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 3}
+  ]
+
   return (
-    <ScrollView>
       <View>
         <View style={styles.appContainer}>
-          <LeadershipACECard title="Hello world" description="This is our service learning Project"/>
-          <LeadershipACECard title="Hello world" description="This is our service learning Project"/>
-          <LeadershipACECard title="Hello world" description="This is our service learning Project"/>
+          <FlatList
+            data={DATA}
+            renderItem={({item}) => (<LeadershipACECard title={item.title} description={item.description} />)}
+            keyExtractor={(item: { ID: any; }) => item.ID}
+          />
         </View>
       </View>
-    </ScrollView>
+
   );
 }
 
