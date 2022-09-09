@@ -16,15 +16,15 @@ The app should be able to: TODO:
 export default function Leadership({ navigation }: RootTabScreenProps<'LeadershipACE'>) {
   const DATA = [
     {title: "This is my service learning", description: "This is my service learning Project guyssssss :D", ID: 1},
-    {title: "This is my service learning 2", description: "This is my service learning Project guyssssss :D 222", ID: 2},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 3},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 4},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 5},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 6},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 7},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 8},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 9},
-    {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 10},
+    // {title: "This is my service learning 2", description: "This is my service learning Project guyssssss :D 222", ID: 2},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 3},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 4},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 5},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 6},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 7},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 8},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 9},
+    // {title: "This is my service learning 3", description: "This is my service learning Project guyssssss :D 333", ID: 10},
   ]
 
   return (
