@@ -18,12 +18,14 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import Leadership from '../screens/Leadership/LeadershipACE';
+import Login from '../screens/Login/Login';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack.Screen name="Login" component={Login} options={{ title: 'hi' }} />
       <RootNavigator />
     </NavigationContainer>
   );
@@ -35,10 +37,13 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+let isUserAuthenticated = false
+
 function RootNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false}} />
+    <Stack.Navigator initialRouteName='Login'>
+      <Stack.Screen name="Login" component={Login} options={{ title: 'hi' }} />
+      <Stack.Screen name="Home" component={BottomTabNavigator} options={{ headerShown: false}}></Stack.Screen>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />

@@ -2,6 +2,9 @@ import { FlatList, ScrollView, StyleSheet, TextInput, TouchableOpacity } from 'r
 import LeadershipACECard from '../../components/Leadership/ACE/ServLearningCardCmpt';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
+import { getFirestore, setDoc, doc, getDoc, collectionGroup, getDocs, collection, onSnapshot, query, where } from '@firebase/firestore';
+import { initializeApp } from 'firebase/app';
+
 
 /*
 The app should be able to: TODO:
@@ -14,6 +17,23 @@ The app should be able to: TODO:
 
 
 export default function Leadership({ navigation }: RootTabScreenProps<'LeadershipACE'>) {
+  const firebaseConfig = {
+    apiKey: "AIzaSyA38DBezI6phXNGJ1QRdRbzGvoIy0JSErQ",
+    authDomain: "sleazy-f623b.firebaseapp.com",
+    projectId: "sleazy-f623b",
+    storageBucket: "sleazy-f623b.appspot.com",
+    messagingSenderId: "381172004045",
+    appId: "1:381172004045:web:b2c8747f1920f9920ba584"
+  };
+  
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const q = query(collection(db, "ACEServiceLearningProjs"))
+  // const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  //   console.log("A Document has been modified in the collection");
+  // });
+
   const DATA = [
     {title: "This is my service learning", description: "This is my service learning Project guyssssss :D", ID: 1},
     // {title: "This is my service learning 2", description: "This is my service learning Project guyssssss :D 222", ID: 2},

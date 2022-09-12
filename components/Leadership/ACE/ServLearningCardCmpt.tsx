@@ -8,7 +8,7 @@ import { Text, View } from '../../Themed';
 import { Grid, Row, Col } from 'react-native-easy-grid';
 import { FirebaseApp, initializeApp } from "firebase/app";
 import { useEffect } from 'react';
-import { getFirestore, setDoc, doc, getDoc } from '@firebase/firestore';
+import { getFirestore, setDoc, doc, getDoc, collectionGroup, getDocs, collection } from '@firebase/firestore';
 var uuid = require('random-uuid-v4');
 
 // @ts-ignore
@@ -26,16 +26,14 @@ export default function LeadershipACECard(props) {
   const db = getFirestore(app);
 
   useEffect(() => {
-    console.log('yes')
-    console.log(uuid())
-    console.log()
     async function retrieve() {
+      // PUSH DATA TO FIRESTORE DATABASE
       // await setDoc(doc(db, "ACEServiceLearningProjs", uuid()), {
       //   Description: "World",
       //   Title: "Hello",
       //   isApproved: false,
       //   isDisplayed: false,
-      //   imageURL: "-", 
+      //   imageURL: "", 
       //   isRecommendedChange: true,
       //   recommendedChangeMessage: {
       //     ID: 1,
@@ -43,7 +41,12 @@ export default function LeadershipACECard(props) {
       //     message: "g",
       //   },
       // });
-      // console.log(await (await getDoc(doc(db, "ACEServiceLearningProjs", "EoZ7RgtH1loDJOChWC8f"))).data())
+
+      // Read Specific firebase document
+      // console.log(await (await getDoc(doc(db, "ACEServiceLearningProjs"))).data())
+
+      // Read All firebase documents
+      //await (await getDocs(collection(db, "ACEServiceLearningProjs"))).forEach((doc) => {console.log(doc.id, " => ", doc.data());})
     }
 
     retrieve()
@@ -54,7 +57,7 @@ export default function LeadershipACECard(props) {
       {/* Using Pressable here because a Normal View breaks styling */}
       <Pressable style={styles.serviceLearningPaddingContainer} >
         <Grid>
-          <Col size={8}><Text style={ { fontSize:"20%" } }>Approved and Displayed</Text></Col>
+          <Col size={8}><Text style={ { fontSize:"20%", color: "lightgreen" } }>✅Approved and Displayed</Text></Col>
           <Col size={1}>
             <Pressable
             onPress={() => {}}
