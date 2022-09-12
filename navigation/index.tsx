@@ -42,7 +42,7 @@ let isUserAuthenticated = false
 function RootNavigator() {
   return (
     <Stack.Navigator initialRouteName='Login'>
-      <Stack.Screen name="Login" component={Login} options={{ title: 'Welcome to Slez!' }} />
+      <Stack.Screen name="Login" component={Login} options={{ title: 'Welcome to Slez!', headerLargeTitle: true }} />
       <Stack.Screen name="Home" component={BottomTabNavigator} options={{ headerShown: false}}></Stack.Screen>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
