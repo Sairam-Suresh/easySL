@@ -3,7 +3,7 @@ import LeadershipACECard from '../../components/Leadership/ACE/ServLearningCardC
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import { getFirestore, setDoc, doc, getDoc, collectionGroup, getDocs, collection, onSnapshot, query, where } from '@firebase/firestore';
-import { initializeApp } from 'firebase/app';
+import app from "../../constants/firebaseAppAuth"
 
 
 /*
@@ -17,16 +17,6 @@ The app should be able to: TODO:
 
 
 export default function Leadership({ navigation }: RootTabScreenProps<'LeadershipACE'>) {
-  const firebaseConfig = {
-    apiKey: "AIzaSyA38DBezI6phXNGJ1QRdRbzGvoIy0JSErQ",
-    authDomain: "sleazy-f623b.firebaseapp.com",
-    projectId: "sleazy-f623b",
-    storageBucket: "sleazy-f623b.appspot.com",
-    messagingSenderId: "381172004045",
-    appId: "1:381172004045:web:b2c8747f1920f9920ba584"
-  };
-  
-  const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
   const q = query(collection(db, "ACEServiceLearningProjs"))
